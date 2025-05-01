@@ -37,7 +37,7 @@ metadata:
 spec:
   type: LoadBalancer
     selector:
-    purpose: ebs-dynamic
+      purpose: ebs-dynamic
     ports:
     - port: 80
       targetPort: 80
