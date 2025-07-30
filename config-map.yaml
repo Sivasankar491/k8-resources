@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: configMap
+metadata:
+  name: nginx-configMap
+data:
+  company: "Syniverse"
+  role: "Operations Engineer"
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: test-pod
+  labels: 
+    app: test
+spec:
+  containers:
+  - name: test-container
+    imaage: nginx
+    envFrom:
+    - configMapRef:
+        name: nginx-configMap
+    # env:
+    #   - name: company
+    #     valueFrom:
+    #       configMapKeyRef:
+    #         name: nginx-configMap
+    #         key: Syniverse
+
+
+
+

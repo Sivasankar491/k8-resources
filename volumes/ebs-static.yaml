@@ -49,6 +49,7 @@ spec:
     volumeMounts:
     - name: ebs-static-volume
       mountPath: /usr/share/nginx/html
+      
 
 ---
 apiVersion: v1

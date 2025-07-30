@@ -20,6 +20,13 @@ spec:
         image: nginx:stable-perl
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 200m
+            memory: 500Mi
 
 ---
 
@@ -28,7 +35,7 @@ kind: service
 metadata:
   name: nginx-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selectors:
     app: frontend-Deployment
   ports:
