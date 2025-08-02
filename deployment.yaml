@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: nginx:stable-perl
+        image: sankar491/frontend:v1
         ports:
         - containerPort: 80
         resources:
@@ -35,7 +35,7 @@ kind: service
 metadata:
   name: nginx-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selectors:
     app: frontend-Deployment
   ports:
