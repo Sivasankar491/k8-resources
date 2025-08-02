@@ -37,7 +37,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: frontend-Deployment
+    app: nginx-pod
   ports:
   - targetPort: 80
     port: 80
